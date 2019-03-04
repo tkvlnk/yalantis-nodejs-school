@@ -36,7 +36,8 @@ function memo(func) {
     return memo._caches.find(compareWithCandidate);
 
     function compareWithCandidate([result, ...cache]) {
-      return cache.every((val, ind) => val === candidate[ind])
+      return cache.length === candidate.length
+        && cache.every((val, ind) => val === candidate[ind])
     }
   }
 }
